@@ -1,5 +1,14 @@
 /* See LICENSE file for copyright and license details. */
 
+/* fn keys sound control */
+#include <X11/XF86keysym.h>
+
+static const char *mutecmd[] = { "amixer", "-q", "sset", "PCM", "toggle", NULL };
+static const char *volupcmd[] = { "amixer", "-q", "sset", "PCM", "5%+", "unmute", NULL };
+static const char *voldowncmd[] = { "amixer", "-q", "sset", "PCM", "5%-", "unmute", NULL };
+
+
+
 /* appearance */
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
@@ -94,6 +103,9 @@ static Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
+	{ 0,              XF86XK_AudioMute,        spawn,          {.v = mutecmd } },
+	{ 0,              XF86XK_AudioLowerVolume, spawn,          {.v = voldowncmd } },
+	{ 0,              XF86XK_AudioRaiseVolume, spawn,          {.v = volupcmd } },
 };
 
 /* button definitions */
