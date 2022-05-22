@@ -3,14 +3,18 @@
 /* fn keys sound control */
 #include <X11/XF86keysym.h>
 
-static const char *mutecmd[] = { "amixer", "-q", "sset", "PCM", "toggle", NULL };
-static const char *volupcmd[] = { "amixer", "-q", "sset", "PCM", "5%+", "unmute", NULL };
-static const char *voldowncmd[] = { "amixer", "-q", "sset", "PCM", "5%-", "unmute", NULL };
+/*
+ * static const char *mutecmd[] = { "amixer", "-q", "sset", "PCM", "toggle", NULL };
+ * static const char *volupcmd[] = { "amixer", "-q", "sset", "PCM", "5%+", "unmute", NULL };
+ * static const char *voldowncmd[] = { "amixer", "-q", "sset", "PCM", "5%-", "unmute", NULL };
+ */
 
-
+static const char *mutecmd[] = { "vol_mute.sh", NULL };
+static const char *volupcmd[] = { "vol_up.sh", NULL };
+static const char *voldowncmd[] = { "vol_down.sh", NULL };
 
 /* appearance */
-static const unsigned int borderpx  = 2;        /* border pixel of windows */
+static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
