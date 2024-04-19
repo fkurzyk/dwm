@@ -13,6 +13,8 @@ static const char *mutecmd[] = { "vol_mute.sh", NULL };
 static const char *volupcmd[] = { "vol_up.sh", NULL };
 static const char *voldowncmd[] = { "vol_down.sh", NULL };
 static const char *togglevga[] = { "toggle_vga.sh", NULL };
+static const char *backlightupcmd[] = { "backlight_up.sh", NULL };
+static const char *backlightdowncmd[] = { "backlight_down.sh", NULL };
 
 /* appearance */
 static const unsigned int borderpx  = 3;        /* border pixel of windows */
@@ -159,6 +161,8 @@ static const Key keys[] = {
 	{ 0,              XF86XK_AudioLowerVolume, spawn,          {.v = voldowncmd } },
 	{ 0,              XF86XK_AudioRaiseVolume, spawn,          {.v = volupcmd } },
 	{ MODKEY|Mod4Mask,		XK_v,	   spawn,	   {.v = togglevga } },
+	{ 0,              XF86XK_MonBrightnessUp,  spawn,          {.v = backlightupcmd } },
+	{ 0,              XF86XK_MonBrightnessDown,spawn,          {.v = backlightdowncmd } },
 };
 
 /* button definitions */
